@@ -1,4 +1,4 @@
-package com.emma.scala.study05.ArrayApp
+package com.emma.scala.study05
 
 object ArrayApp extends App{
 //  val a = new Array[String](5)
