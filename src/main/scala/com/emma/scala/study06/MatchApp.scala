@@ -22,10 +22,22 @@ object MatchApp extends App{
     }
   }
 
-  judgeGrade("A") // Excellent
-  judgeGrade("B") // good
-  judgeGrade("C") // ok
+//  judgeGrade("A") // Excellent
+//  judgeGrade("B") // good
+//  judgeGrade("C") // ok
 
+  def judgeGrade(name: String, grade: String): Unit ={
+    grade match {
+      case "A" => println("Excellent...")
+      case "B" => println("Good...")
+      case "C" => println("OK...")
+      case _ if(name == "lisi") => println(name + ", you are good...")
+      case _  => println("need word harder...")
+    }
+  }
+
+  judgeGrade("zhangsan", "D")
+  judgeGrade("lisi", "D")
 
 
 
