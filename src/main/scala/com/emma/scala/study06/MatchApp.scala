@@ -94,6 +94,20 @@ object MatchApp extends App{
   caseclassMatch(Employee("zhangsan", "2"))
   caseclassMatch(Other("other"))
 
+  val grades = Map("PK"->"A", "zhangsan"->"B")
+
+  def getGrade(name:String): Unit ={
+    val grade = grades.get(name)
+    grade match{
+      case Some(grade) => println("Your grade is: "+grade)
+      case None => println("Sorry...")
+    }
+  }
+
+  getGrade("zhangsan")
+  getGrade("PK")
+  getGrade("lisi")
+
 
 
 
