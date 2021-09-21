@@ -52,6 +52,17 @@ object MatchApp extends App{
   greeting(Array("zhangsan", "lisi", "wangwu")) // Hi: zhangsan and other friends
   greeting(Array("lisi", "zhangsan", "wangwu")) // Hi: everybody...
 
+  def greeting(list:List[String]): Unit ={
+        list match {
+          case "zhangsan"::Nil => println("Hi: zhangsan")
+          case x::y::Nil => println("Hi: " +x + " , " +y)
+          case "zhangsan" ::tail => println("Hi: zhagnsan and other friends")
+          case _ => println("Hi everybody...")
+        }
+  }
+  greeting(List("zhangsan")) // Hi : zhangsan
+  greeting(List("zhangsan", "lisi", "wangwu")) // Hi: zhangsan and other friends
+  greeting(List("lisi", "zhangsan", "wangwu")) // Hi: everybody...
 
 
 
