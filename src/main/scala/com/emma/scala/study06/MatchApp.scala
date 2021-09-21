@@ -73,9 +73,27 @@ object MatchApp extends App{
     }
   }
 
-  matchType(1) // Int
-  matchType(1l) // other type
-  matchType(Map("name"->"PK")) // (name, PK)
+//  matchType(1) // Int
+//  matchType(1l) // other type
+//  matchType(Map("name"->"PK")) // (name, PK)
+
+
+  def caseclassMatch(person:Person): Unit ={
+    person match {
+      case CTO(name, floor) => println("CTO, name: "+name+" floor: "+floor)
+      case Employee(name, floor) => println("Employee, name: "+name+" floor: "+floor)
+      case _ => println("Other")
+    }
+  }
+  class Person // set a high level class to use match
+  case class CTO(name:String, floor:String) extends Person
+  case class Employee(name:String, floor:String) extends Person
+  case class Other(name:String) extends Person
+
+  caseclassMatch(CTO("PK", "22"))
+  caseclassMatch(Employee("zhangsan", "2"))
+  caseclassMatch(Other("other"))
+
 
 
 
