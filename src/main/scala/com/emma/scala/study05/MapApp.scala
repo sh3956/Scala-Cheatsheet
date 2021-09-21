@@ -28,8 +28,9 @@ object MapApp extends App{
     println(key +" : " + b.getOrElse(key, 9))
   }
 
-  for (value <- b.values){
+  for (value <- b.values) {
     println(value)
+  }
 
 
 
