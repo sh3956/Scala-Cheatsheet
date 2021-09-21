@@ -36,8 +36,22 @@ object MatchApp extends App{
     }
   }
 
-  judgeGrade("zhangsan", "D")
-  judgeGrade("lisi", "D")
+//  judgeGrade("zhangsan", "D") // need word harder
+//  judgeGrade("lisi", "D") // lisi, you are good...
+
+  def greeting(array: Array[String]): Unit ={
+    array match {
+      case Array("zhangsan") => println("Hi: zhangsan")
+      case Array(x, y) => println("Hi: " + x + " , " +y)
+      case Array("zhangsan", _*) => println("Hi: zhangsan and other friends")
+      case _ => println("Hi： everybody...")
+    }
+  }
+
+  greeting(Array("zhangsan")) // Hi : zhangsan
+  greeting(Array("zhangsan", "lisi", "wangwu")) // Hi: zhangsan and other friends
+  greeting(Array("lisi", "zhangsan", "wangwu")) // Hi: everybody...
+
 
 
 
