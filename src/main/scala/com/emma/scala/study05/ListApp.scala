@@ -32,4 +32,10 @@ object ListApp extends App{
     }
   }
   println(sum(1,2,3,4)) // 10
+
+  val set = scala.collection.mutable.Set[Int]()
+  set += 1
+  set += (1, 1)
+  println(set)
+
 }
