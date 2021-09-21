@@ -64,7 +64,18 @@ object MatchApp extends App{
   greeting(List("zhangsan", "lisi", "wangwu")) // Hi: zhangsan and other friends
   greeting(List("lisi", "zhangsan", "wangwu")) // Hi: everybody...
 
+  def matchType(obj:Any): Unit ={
+    obj match{
+      case x:Int => println("Int")
+      case s:String => println("String")
+      case m:Map[_,_] => m.foreach(println)
+      case _ =>println("other type")
+    }
+  }
 
+  matchType(1) // Int
+  matchType(1l) // other type
+  matchType(Map("name"->"PK")) // (name, PK)
 
 
 
